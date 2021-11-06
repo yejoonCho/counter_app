@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_bloc: ^7.3.2
   simple_animations: ^3.0.1
+  sizer: ^2.0.15
 
 dev_dependencies:
   flutter_test:

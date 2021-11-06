@@ -3,6 +3,7 @@ import 'package:counter_app/core/app_router.dart';
 import 'package:counter_app/logic/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(MyApp());
