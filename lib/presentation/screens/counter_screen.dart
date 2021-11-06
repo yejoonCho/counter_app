@@ -10,7 +10,7 @@ class CounterScreen extends StatelessWidget {
       body: Center(
         child: Text(
           'Welcome to Counter App',
-          style: TextStyle(fontSize: 28),
+          style: Theme.of(context).textTheme.headline4,
         ),
       ),
     );

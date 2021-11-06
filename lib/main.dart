@@ -1,5 +1,5 @@
-import 'package:counter_app/core/themes/app_theme.dart';
-import 'package:counter_app/presentation/screens/counter_screen.dart';
+import 'package:counter_app/core/app_theme.dart';
+import 'package:counter_app/core/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      home: CounterScreen(),
+      initialRoute: AppRouter.counter,
+      onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
 }
