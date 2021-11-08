@@ -1,5 +1,7 @@
+import 'package:counter_app/logic/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CounterSlide extends StatefulWidget {
   @override
@@ -119,6 +121,13 @@ class _CounterSlideState extends State<CounterSlide>
 
   void _onPanEnd(DragEndDetails details) {
     _controller.stop();
+
+    if (_controller.value <= -0.2) {
+      BlocProvider.of<CounterCubit>(context).decrement();
+    } else if (_controller.value >= 0.2) {
+      BlocProvider.of<CounterCubit>(context).increment();
+    }
+
     final SpringDescription _kDefaultSpring =
         new SpringDescription.withDampingRatio(
       mass: 0.9,
