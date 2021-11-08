@@ -2,6 +2,7 @@ import 'package:counter_app/logic/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
 
 class CounterSlide extends StatefulWidget {
   @override
@@ -42,8 +43,8 @@ class _CounterSlideState extends State<CounterSlide>
   Widget build(BuildContext context) {
     return FittedBox(
       child: Container(
-        width: 280,
-        height: 120,
+        width: SizerUtil.deviceType == DeviceType.tablet ? 40.w : 55.w,
+        height: 12.h,
         child: Material(
           type: MaterialType.canvas,
           clipBehavior: Clip.antiAlias,
@@ -57,7 +58,7 @@ class _CounterSlideState extends State<CounterSlide>
                 bottom: null,
                 child: Icon(
                   Icons.remove,
-                  size: 40,
+                  size: SizerUtil.deviceType == DeviceType.tablet ? 7.w : 10.w,
                   color: Theme.of(context).iconTheme.color!.withOpacity(0.7),
                 ),
               ),
@@ -66,7 +67,7 @@ class _CounterSlideState extends State<CounterSlide>
                 top: null,
                 child: Icon(
                   Icons.add,
-                  size: 40,
+                  size: SizerUtil.deviceType == DeviceType.tablet ? 7.w : 10.w,
                   color: Theme.of(context).iconTheme.color!.withOpacity(0.7),
                 ),
               ),
@@ -85,7 +86,9 @@ class _CounterSlideState extends State<CounterSlide>
                       child: Center(
                         child: Icon(
                           Icons.trip_origin,
-                          size: 40,
+                          size: SizerUtil.deviceType == DeviceType.tablet
+                              ? 7.w
+                              : 10.w,
                           color: Theme.of(context)
                               .iconTheme
                               .color!

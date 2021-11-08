@@ -3,6 +3,7 @@ import 'package:counter_app/presentation/widgets/counter_slide.dart';
 import 'package:counter_app/presentation/widgets/counter_value.dart';
 import 'package:counter_app/presentation/widgets/plasma_background.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class CounterScreen extends StatelessWidget {
   @override
@@ -15,16 +16,17 @@ class CounterScreen extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           PlasmaBackground(),
-          Positioned(bottom: 48, child: CounterSlide()),
           Positioned(
-              top: 48,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  AnimatedCircle(),
-                  CounterValue(),
-                ],
-              )),
+            top: 10.h,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                AnimatedCircle(),
+                CounterValue(),
+              ],
+            ),
+          ),
+          Positioned(bottom: 8.h, child: CounterSlide()),
         ],
       ),
     );
