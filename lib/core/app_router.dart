@@ -1,4 +1,4 @@
-import 'package:counter_app/presentation/screens/counter_screen.dart';
+import 'package:counter_app/presentation/counter_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
