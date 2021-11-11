@@ -20,22 +20,20 @@ class _CounterValueState extends State<CounterValue> {
 
   @override
   Widget build(BuildContext context) {
+    _animationController?.forward(from: 0.0);
     return BlocBuilder<CounterCubit, CounterState>(
-      builder: (context, state) {
-        _animationController?.forward(from: 0.0);
-        return ZoomIn(
-          duration: Duration(milliseconds: 400),
-          manualTrigger: true,
-          controller: (controller) => _animationController = controller,
-          child: Text(
-            '${state.counterValue}',
-            style: Theme.of(context).textTheme.headline1!.copyWith(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 128,
-                ),
-          ),
-        );
-      },
+      builder: (context, state) => ZoomIn(
+        duration: Duration(milliseconds: 400),
+        manualTrigger: true,
+        controller: (controller) => _animationController = controller,
+        child: Text(
+          '${state.counterValue}',
+          style: Theme.of(context).textTheme.headline1!.copyWith(
+                fontWeight: FontWeight.bold,
+                fontSize: 128,
+              ),
+        ),
+      ),
     );
   }
 }
